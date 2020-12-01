@@ -1,0 +1,56 @@
+import axios from 'axios'
+
+class PatientDataService {
+    retrieveAllTodos(name) {
+        //console.log('executed service')
+        return axios.get(`http://localhost:8081/jpa/users/${name}/patientinfo`);
+
+    }
+    deleteTodo(name, id) {
+        //console.log('executed service')
+        return axios.delete(`http://localhost:8081/jpa/users/${name}/patient/${id}`);
+    }
+    retrievePatientInfo(name) {
+        //console.log('executed service')
+        console.log('executed service :'+ name)
+        return axios.get(`http://localhost:8081/jpa/users/${name}/patientdetails`);
+    }
+
+
+    // retrievePatientInfoId(id) {
+    //     //console.log('executed service')
+    //     return axios.get(`http://localhost:8081/jpa/users/${name}/patient/{id}`);
+    // }
+
+
+    retrievePatientDetailsId(id) {
+        //console.log('executed service'+ name)
+        return axios.get(`http://localhost:8081/jpa/users/${name}/patientdetails/{id}`);
+    }
+
+
+    updatePatient(name, id, patientdetials) {
+        //console.log('executed service  update')
+        return axios.put(`http://localhost:8081/jpa/users/${name}/patientdetials/${id}`, patientdetials);
+    }
+
+    createPatient(name, patientdetials) {
+        //console.log('executed service create')
+        return axios.post(`http://localhost:8081/jpa/users/${name}/patientdetials`, patientdetials);
+    }
+
+   
+
+
+}
+
+export default new PatientDataService()
+
+
+render(){
+    return <div> update component for id - {this.props.match.params.id}</div>
+    }
+
+
+
+
