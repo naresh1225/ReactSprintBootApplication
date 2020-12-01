@@ -24,7 +24,7 @@ class PatientDataService {
 
 
     retrievePatientDetailsId(name, id) {
-        //console.log('executed service id in retrieve details:'+ id)
+        console.log('executed service id in retrieve details:'+ id)
         return axios.get(`http://localhost:8081/jpa/users/${name}/patientdetails/${id}`);
     }
 
