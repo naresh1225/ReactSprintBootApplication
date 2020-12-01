@@ -35,7 +35,7 @@ class PatientDataService {
     }
 
     createPatient(name,patientdetials) {
-        //console.log('executed service create')
+        console.log('executed service create')
         return axios.post(`http://localhost:8081/jpa/users/${name}/updatepatient`, patientdetials);
     }
 
